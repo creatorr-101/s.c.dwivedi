@@ -1,0 +1,74 @@
+<doctype html />
+<html>
+
+<head>
+    <title>Happy Father's Day Papa</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript">
+        var loader;
+        var content;
+
+        function loadNow(opacity) {
+            if (opacity >= -0.01) {
+                loader.style.opacity = opacity;
+                window.setTimeout(function() {
+                    loadNow(opacity - 0.02);
+                }, 50);
+            } else {
+                loader.style.zIndex = -2;
+            }
+        }
+
+        $(document).ready(function() {
+            loader = document.getElementById('loader');
+            content = document.getElementById('content');
+            loadNow(2);
+
+        });
+
+        $(function() {
+            $("#dialog").dialog({
+                autoOpen: false,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 1000
+                }
+            });
+
+            $("#opener").on("click", function() {
+                $("#dialog").dialog("open");
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id='loader'></div>
+    <div id="content" class="cen">
+        <h1>Happy<br>Father's<br>Day<br>Papa</h1>
+        <div id='gol1' class='cen golMain bdaGola'>
+            <div id='gol1a' class="golMain"></div>
+     
+        </div>
+        <div id='gol2' class='cen golMain bdaGola'>
+            <div id='gol2a' class="golMain"></div>
+        </div>
+        <button id='opener'>Click here</button>
+        <div id="dialog" title="Love you❤️" class="cen">
+            <p>Happy Father's Day Papa<br>You are the best papa. We love you so muchh 💕 Thankyou for always supporting and loving us.</p>
+        </div>
+    </div>
+</body>
+
+</html>
